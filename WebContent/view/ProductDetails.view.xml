@@ -1,0 +1,26 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="smax.etag.SPLITAPPP.controller.ProductDetails" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Product Details">
+		<content>
+	          <ObjectHeader 
+	          id="idObjHeader"
+	          title="{Name}"
+	          number="{ProductID}">
+	          <ObjectAttribute
+	           title="Category"
+	            text="{Category}" 
+	            id="idObjAttr"
+	        
+	          ></ObjectAttribute>
+	          </ObjectHeader>
+		</content>
+		<footer>
+		  <Bar>
+		    <contentRight>
+		        <Button text="Create" press="onCreate"/>
+		         <Button text="Update" press="onUpdate"/>
+		    </contentRight>
+		  </Bar>
+		</footer>
+	</Page>
+</core:View>

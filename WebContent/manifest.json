@@ -1,0 +1,53 @@
+{
+  "sap.app": {
+     "id" : "smax.etag.SPLITAPPP",
+     "dataSources" : {
+         "etag" : {
+         "uri" : "proxy/http/122.180.87.238:8000/sap/opu/odata/SAP/ZETAG_SRV"         
+         }     
+     }
+  }, 
+  "sap.ui5" : {
+  	  "rootView" : "smax.etag.SPLITAPPP.view.SPLITAPP",
+  	  "models" : {
+  	     "" : {
+  	       "dataSource" : "etag"
+  	     }
+  	  },
+	   "routing" : {
+		   "config" : {
+			   "routerClass" : "sap.m.routing.Router",
+			   "viewType" : "XML",
+			   "controlId" : "idSplitApp",
+			   "viewPath" : "smax.etag.SPLITAPPP.view"
+		   },
+		   "routes" : [
+			   {
+				   "pattern" : "",
+				   "name" : "homeRouteName",
+				   "target" : ["mPage", "dPage"]				   				   
+			   },
+			   {
+			     "pattern" : "toDetail/{prodId}",
+			     "name" : "toDetails",
+			     "target" : ["dPage"]
+			   
+			   }
+			   
+		   ],
+		   "targets" : {
+		      "mPage" : {
+		            "viewName" : "ProductList",
+		            "controlAggregation" : "masterPages"
+		      },
+		      "dPage" : {
+		         "viewName" : "ProductDetails",
+		         "controlAggregation" : "detailPages"
+		      }
+		   
+		   }
+		   
+	   }
+  
+  }
+}
